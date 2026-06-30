@@ -243,7 +243,7 @@ class Score:
         
         
         
-class Gravity(pg.sprite.Sprite):#############大島担当
+class Gravity(pg.sprite.Sprite):#############追加機能Ⅱ
     """
     重力場
     """
@@ -284,10 +284,10 @@ def main():
             if event.type == pg.QUIT:
                 return 0
             if event.type == pg.KEYDOWN:
-                if event.key == pg.K_SPACE:
+                if event.key == pg.K_SPACE:####スペースでビーム
                     beams.add(Beam(bird))
 
-                if event.key == pg.K_RETURN:
+                if event.key == pg.K_RETURN:####エンターで重力波
                     if score.value >= 200:
                         score.value -= 200
                         gravities.add(Gravity(400))
@@ -336,7 +336,7 @@ def main():
         bombs.update()
         bombs.draw(screen)
 
-        gravities.update()
+        gravities.update()###重力波
         gravities.draw(screen)
 
         exps.update()
